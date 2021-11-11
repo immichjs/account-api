@@ -1,7 +1,8 @@
-const User = require('../models/User')
-const bcrypt = require('bcryptjs')
+import User from'../models/User'
+import bcrypt from 'bcryptjs'
+import { Request, Response } from 'express'
 
-const auth = async (request, response) => {
+const auth = async (request: Request, response: Response) => {
   const { email, username, password } = request.body
 
   let user
@@ -23,4 +24,4 @@ const auth = async (request, response) => {
   response.send({ user })
 }
 
-module.exports = auth
+export default auth

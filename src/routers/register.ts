@@ -1,6 +1,7 @@
-const User = require('../models/User')
+import User from '../models/User'
+import { Request, Response } from 'express'
 
-const register = async (request, response) => {
+const register = async (request: Request, response: Response) => {
   const { email } = request.body
 
   try {
@@ -13,5 +14,4 @@ const register = async (request, response) => {
     return response.status(400).send({ message: error })
   }
 }
-
-module.exports = register
+export default register

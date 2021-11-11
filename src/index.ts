@@ -1,7 +1,7 @@
 require('dotenv').config()
 
-const express = require('express')
-const router = require('./routers')
+import express from 'express'
+import router from './routers/index.js'
 
 const app = express()
 
